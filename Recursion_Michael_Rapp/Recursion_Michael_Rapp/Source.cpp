@@ -14,6 +14,7 @@ int main() {
 	ifstream inFile;
 
 	if (openFile(inFile)) {
+		cout << "The file is found." << endl;
 		cout << "The file outputs:" << endl;
 
 		while (!inFile.eof()){
@@ -24,7 +25,6 @@ int main() {
 	else {
 		cout << "File not found! Program terminates" << endl;
 	}
-
 
 	cin.ignore();
 	cin.get();
@@ -57,6 +57,7 @@ bool openFile(ifstream &inFile) {
 	if (!inFile) {
 		return false;
 	}
-	else
+	else {
 		return true;
+	}
 }
