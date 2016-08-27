@@ -6,16 +6,20 @@ using namespace std;
 
 int fibonacci(int num);
 bool openFile(ifstream &inFile);
-void readFile(ifstream &inFile);
 
 int main() {
 
-	int num = 8;
+	int num;
 	string filePath;
 	ifstream inFile;
 
 	if (openFile(inFile)) {
-		cout << fibonacci(num);
+		cout << "The file outputs:" << endl;
+
+		while (!inFile.eof()){
+			inFile >> num;
+			cout << num << " ---> " << fibonacci(num) << endl;
+		}
 	}
 	else {
 		cout << "File not found! Program terminates" << endl;
@@ -55,8 +59,4 @@ bool openFile(ifstream &inFile) {
 	}
 	else
 		return true;
-}
-
-void readFile(ifstream &inFile) {
-
 }
